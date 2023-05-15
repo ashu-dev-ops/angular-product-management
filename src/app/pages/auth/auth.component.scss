@@ -1,0 +1,57 @@
+.card {
+    display: block;
+    margin: 5vh auto;
+    width: 30vw;
+    -webkit-box-shadow: 10px 10px 29px 19px rgba(0, 0, 0, 0.411);
+    -moz-box-shadow: 10px 10px 29px 19px rgba(0, 0, 0, 0.438);
+    box-shadow: 10px 10px 29px 19px rgba(0, 0, 0, 0.418);
+    border-radius: 20px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2 {
+        text-align: center;
+        text-align: center;
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #735400;
+        line-height: 1.222;
+        margin-bottom: 1rem;
+        small {
+            display: block;
+            font-size: 0.6em;
+            font-weight: 400;
+            margin-top: 0.25em;
+            color: #b1aea8;
+        }
+    }
+    .action-button {
+        font: inherit;
+        font-size: 1.25rem;
+        padding: 0.5em;
+        // width: %;
+        font-weight: 500;
+        background-color: #6658d3;
+        border-radius: 6px;
+        color: #fff;
+        border: 0;
+        margin: 1vh auto;
+        display: block;
+        &:focus {
+            outline: 0;
+        }
+    }
+    .card-info {
+        padding: 0.2rem 0.2rem;
+        text-align: center;
+        font-size: 0.875rem;
+        color: #8597a3;
+        a {
+            display: block;
+            color: #6658d3;
+            text-decoration: none;
+        }
+    }
+}

@@ -1,0 +1,63 @@
+<div class="cs-container">
+  <div *ngIf="loading">
+    <div class="loading">
+      <mat-spinner diameter="50"></mat-spinner>
+    </div>
+  </div>
+  <h3 style="text-align: center; font-size: 3rem; font-weight: 500">
+    Add Category
+  </h3>
+  <form [formGroup]="imageForm" (ngSubmit)="onSubmit()" class="file-cat-form">
+    <div class="row-flex">
+      <div class="input">
+        <mat-form-field appearance="outline" type="text" style="width: 20vw">
+          <mat-label>category name</mat-label>
+          <input matInput formControlName="name" />
+        </mat-form-field>
+      </div>
+      <div class="image-upload-section">
+        <div *ngIf="previewUrl">
+          <img
+            [src]="previewUrl"
+            alt="image preview"
+            height="100px"
+            width="100px"
+          />
+        </div>
+        <div *ngIf="image">
+          <img
+            src="{{ image }}"
+            alt="image preview"
+            height="100px"
+            width="100px"
+          />
+        </div>
+        <div *ngIf="!previewUrl && !image">
+          <img
+            src="/assets/upload.png"
+            alt="image preview"
+            height="100px"
+            width="100px"
+          />
+        </div>
+        <div>
+          <label for="upload">Choose file</label>
+          <input
+            type="file"
+            id="upload"
+            hidden
+            (change)="onFileChange($event)"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="d-flex">
+      <button type="button" class="cancle-btn" (click)="onCancle()">
+        Cancle
+      </button>
+      <button type="submit" class="common-btn">
+        {{ data ? "update" : "create" }}
+      </button>
+    </div>
+  </form>
+</div>

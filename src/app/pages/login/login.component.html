@@ -1,0 +1,41 @@
+<div class="container">
+  <!-- code here -->
+  <div class="card">
+    <h2 class="card-heading">
+      Get started <br />
+      <small>Let us create your account</small>
+    </h2>
+
+    <form class="card-form" [formGroup]="authForm" (ngSubmit)="onSubmit()">
+      <div class="input">
+        <mat-form-field appearance="outline" type="email" style="width: 20rem">
+          <mat-label>email</mat-label>
+          <input matInput formControlName="email" />
+        </mat-form-field>
+      </div>
+      <div class="input">
+        <mat-form-field
+          appearance="outline"
+          type="password"
+          style="width: 20rem"
+        >
+          <mat-label>password</mat-label>
+          <input matInput formControlName="password" />
+        </mat-form-field>
+      </div>
+      <div class="action">
+        <button class="action-button" (click)="onSubmit()">Log in</button>
+      </div>
+    </form>
+    <div class="card-info">
+      <p>
+        forgot password
+        <!-- <a href="#">Terms and Conditions</a> -->
+      </p>
+      <p>
+        Dont have an account
+        <a routerLink="/register">Register</a>
+      </p>
+    </div>
+  </div>
+</div>

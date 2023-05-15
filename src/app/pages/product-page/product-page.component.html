@@ -1,0 +1,76 @@
+<div class="tabel-container">
+  <mat-form-field>
+    <mat-label>Filter</mat-label>
+    <input
+      matInput
+      (keyup)="applyFilter($event)"
+      placeholder="Ex. Mia"
+      #input
+    />
+  </mat-form-field>
+
+  <div class="mat-elevation-z8" style="border-radius: 30px">
+    <table mat-table [dataSource]="dataSource" matSort>
+      <!-- ID Column -->
+
+      <!-- Progress Column -->
+      <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Product Name</th>
+        <td mat-cell *matCellDef="let row">{{ row.title }}</td>
+      </ng-container>
+      <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Product Price</th>
+        <td mat-cell *matCellDef="let row">{{ row.price }}</td>
+      </ng-container>
+      <ng-container matColumnDef="category">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          Product Category
+        </th>
+        <td mat-cell *matCellDef="let row">{{ row.category }}</td>
+      </ng-container>
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          Product Status
+        </th>
+        <td mat-cell *matCellDef="let row">{{ row.status }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Action</th>
+        <td mat-cell *matCellDef="let row">
+          <!-- {{ row.price | currency : "INR" }} -->
+          <button
+            mat-icon-button
+            color="primary"
+            [routerLink]="':id'"
+            (click)="openEditForm(row)"
+          >
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="deleteProduct(row)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+      <!-- Row shown when there is no matching data. -->
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">
+          No data matching the filter "{{ input.value }}"
+        </td>
+      </tr>
+    </table>
+    <mat-paginator
+      [pageSizeOptions]="[5, 10, 25, 100]"
+      aria-label="Select page of users"
+    ></mat-paginator>
+  </div>
+  <!-- <button>add new Product</button> -->
+</div>
+<!-- <button mat-raised-buttonstyle="width: fit-content">Add Product</button> -->
+<button mat-stroked-button style="display: block; margin: 20px auto">
+  <a [routerLink]="['/dashboard', 'add-new-product']"> Add Product</a>
+</button>

@@ -1,0 +1,48 @@
+<div class="container">
+  <!-- code here -->
+  <div class="card">
+    <div class="card-image">
+      <h2 class="card-heading">
+        Get started <br />
+        <small>Hrry up login now</small>
+      </h2>
+    </div>
+    <form class="card-form" [formGroup]="authForm" (ngSubmit)="onSubmit()">
+      <div class="input">
+        <mat-form-field appearance="outline" type="text" style="width: 20rem">
+          <mat-label>name</mat-label>
+          <input matInput formControlName="username" />
+        </mat-form-field>
+      </div>
+      <div class="input">
+        <mat-form-field appearance="outline" type="email" style="width: 20rem">
+          <mat-label>email</mat-label>
+          <input matInput formControlName="email" />
+        </mat-form-field>
+      </div>
+      <div class="input">
+        <mat-form-field
+          appearance="outline"
+          type="password"
+          style="width: 20rem"
+        >
+          <mat-label>password</mat-label>
+          <input matInput formControlName="password" />
+        </mat-form-field>
+      </div>
+      <div class="action">
+        <button class="action-button">Get started</button>
+      </div>
+    </form>
+    <div class="card-info">
+      <p>
+        By signing up you are agreeing to our
+        <a href="#">Terms and Conditions</a>
+      </p>
+      <p>
+        have account log in
+        <a routerLink="/login">LOGIN</a>
+      </p>
+    </div>
+  </div>
+</div>

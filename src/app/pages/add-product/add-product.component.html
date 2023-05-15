@@ -1,0 +1,63 @@
+<mat-card class="cs-card">
+  <form [formGroup]="addProductForm" (ngSubmit)="onSubmit()" class="cs-form">
+    <mat-form-field appearance="outline" type="text">
+      <mat-label>Product Name</mat-label>
+      <input matInput formControlName="title" />
+    </mat-form-field>
+    <mat-form-field appearance="outline" type="text">
+      <mat-label>Product Description</mat-label>
+      <input matInput formControlName="description" />
+    </mat-form-field>
+    <mat-form-field appearance="outline" type="text">
+      <mat-label>Product Price</mat-label>
+      <input matInput formControlName="price" />
+    </mat-form-field>
+    <!-- <mat-form-field appearance="outline" type="text">
+      <mat-label>Product Status</mat-label>
+      <input matInput formControlName="status" />
+    </mat-form-field> -->
+    <mat-form-field appearance="fill">
+      <mat-label>Product Status</mat-label>
+      <mat-select formControlName="status">
+        <mat-option *ngFor="let i of stockOptions" [value]="i">
+          {{ i }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <!-- <mat-form-field appearance="outline" type="text" style="width: 20vw">
+          <mat-label>Product Category</mat-label>
+          <input matInput formControlName="categoryId" />
+        </mat-form-field> -->
+    <mat-form-field appearance="fill">
+      <mat-label>Product Category</mat-label>
+      <mat-select formControlName="categoryId">
+        <mat-option *ngFor="let i of options" [value]="i.name">
+          {{ i.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <!-- <button (click)="onSubmit()">update</button> -->
+    <div class="add-product-btn-row">
+      <button mat-flat-button color="primary" type="button">
+        <a [routerLink]="['/dashboard', 'product']">back</a>
+      </button>
+      <button
+        *ngIf="routeInfo"
+        mat-raised-button
+        type="submit"
+        style="width: fit-content"
+      >
+        Update
+      </button>
+      <button
+        *ngIf="!routeInfo"
+        mat-raised-button
+        style="width: fit-content"
+        type="submit"
+      >
+        create
+      </button>
+      <!-- <button><a routerLink="">back</a></button> -->
+    </div>
+  </form>
+</mat-card>

@@ -1,1 +1,45 @@
-/* You can add global styles to this file, and also import other style files */
+html,
+body {
+  height: 100%;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.common-btn {
+  font: inherit;
+  font-size: 1.25rem;
+  padding: 0.5em;
+  // width: %;
+  font-weight: 500;
+  background-color: #6658d3;
+  border-radius: 6px;
+  color: #fff;
+  border: 0;
+  margin: 1vh auto;
+  display: block;
+  cursor: pointer;
+  &:focus {
+    outline: 0;
+  }
+}
+.cancle-btn {
+  font: inherit;
+  font-size: 1.25rem;
+  padding: 0.5em;
+  // width: %;
+  font-weight: 500;
+  background-color: #f54755;
+  border-radius: 6px;
+  color: #fff;
+  border: 0;
+  margin: 1vh auto;
+  display: block;
+  cursor: pointer;
+  &:focus {
+    outline: 0;
+  }
+}

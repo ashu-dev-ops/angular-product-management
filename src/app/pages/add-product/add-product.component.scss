@@ -1,0 +1,16 @@
+.cs-card {
+    width: 30rem;
+    display: flex;
+    margin: auto;
+    margin-top: 10vh;
+    padding: 1rem 2rem;
+    gap: 20px;
+}
+.cs-form {
+    display: flex;
+    flex-direction: column;
+}
+.add-product-btn-row {
+    display: flex;
+    gap: 20px;
+}
